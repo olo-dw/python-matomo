@@ -10,3 +10,9 @@ class MatomoConnector(object):
         self.endpoint = endpoint
         self.token = token
         self.id_site = id_site
+
+    @property
+    def base_url(self):
+        return "{endpoint}/?token_auth={token}&module=API&idSite={id_site}".format(endpoint=self.endpoint,
+                                                                                   token=self.token,
+                                                                                   id_site=self.id_site)
