@@ -1,5 +1,10 @@
 # python-matomo
 
+```python
+from matomo.matomo_connector import MatomoConnector
+
+m = MatomoConnector('https://matomo.company.eu', token)
+```
 
 # License
 
