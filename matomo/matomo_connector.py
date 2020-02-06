@@ -21,3 +21,6 @@ class MatomoConnector(object):
 
     def __getattr__(self, item: str) -> MatomoModule:
         return MatomoModule(item, self)
+
+    def __str__(self):
+        return self.base_url

@@ -22,3 +22,7 @@ def test_base_url(matomo_connector):
 
 def test_getattr(matomo_connector):
     assert isinstance(matomo_connector.module, MatomoModule) is True
+
+
+def test_str(matomo_connector):
+    assert str(matomo_connector) == matomo_connector.base_url
