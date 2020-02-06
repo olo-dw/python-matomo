@@ -3,6 +3,8 @@
 #
 # Olivier Locard
 
+from .matomo_module import MatomoModule
+
 
 class MatomoConnector(object):
 
@@ -16,3 +18,6 @@ class MatomoConnector(object):
         return "{endpoint}/?token_auth={token}&module=API&idSite={id_site}".format(endpoint=self.endpoint,
                                                                                    token=self.token,
                                                                                    id_site=self.id_site)
+
+    def __getattr__(self, item: str) -> MatomoModule:
+        return MatomoModule(item, self)
