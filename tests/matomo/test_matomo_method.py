@@ -10,5 +10,6 @@ def test_matomo_method_instance(matomo_method):
     assert hasattr(matomo_method, 'module') is True
 
 
-def test_str(matomo_method):
-    assert str(matomo_method) == 'url/?token_auth=token&module=API&idSite=all&method=module.method'
+def test_str(matomo_method, fixture_url):
+    assert str(matomo_method) == '{url}/?token_auth=token&module=API&idSite=all&method=module.method'.format(
+        url=fixture_url)

@@ -11,8 +11,13 @@ from matomo.matomo_module import MatomoModule
 
 
 @pytest.fixture
-def matomo_connector():
-    return MatomoConnector('url', 'token')
+def fixture_url():
+    return 'https://localhost'
+
+
+@pytest.fixture
+def matomo_connector(fixture_url):
+    return MatomoConnector(fixture_url, 'token')
 
 
 @pytest.fixture
